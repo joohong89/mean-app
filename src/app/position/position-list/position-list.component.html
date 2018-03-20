@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Positions</h1>
+  <a [routerLink]="['/positions-create']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Units</th>
+        <th>Type</th>
+        <th>Entry</th>
+        <th>Exit</th>
+        <th>Entry Date</th>
+        <th>Exit Date</th>
+        <th>Profit</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of positions">
+        <td>{{item.position}}</td>
+        <td>{{item.unit}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.entry}}</td>
+        <td>{{item.exit}}</td>
+        <td>{{item.entryDate}}</td>
+        <td>{{item.exitDate}}</td>
+        <td>{{item.profit}}</td>
+        <td> <a [routerLink]="['/positions-edit', item._id]" class="btn btn-success">Details</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
